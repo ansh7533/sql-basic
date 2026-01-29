@@ -1,0 +1,215 @@
+# SQL Basics Assignment
+
+## 📋 Assignment Information
+- **Course:** Java + DSA (PW Skills)
+- **Topic:** SQL Basics
+- **Date:** January 24, 2026
+- **Student Name:** [RAHUL SHARMA]
+
+## 🎯 Learning Objectives
+- Creating databases and tables
+- Inserting data into tables
+- Sorting data with ORDER BY
+- Filtering data with WHERE
+- Understanding Primary Keys and Foreign Keys
+- Working with SQL Constraints
+
+## 📊 Database Schema
+
+### Database: company_db
+
+### Table 1: employees
+```
+Columns:
+- employee_id (INT, PRIMARY KEY)
+- first_name (VARCHAR(50))
+- last_name (VARCHAR(50))
+- department (VARCHAR(50))
+- salary (INT)
+- hire_date (DATE)
+
+Sample Data: 5 employees across HR, Sales, IT, and Finance departments
+```
+
+### Table 2: sales
+```
+Columns:
+- sale_id (INT, PRIMARY KEY)
+- customer_name (VARCHAR(50))
+- amount (INT)
+- sale_date (DATE)
+
+Sample Data: 5 sales transactions
+```
+
+## ✅ Questions Solved
+
+### Q1: Create Database and Employees Table
+Created `company_db` database and `employees` table with proper schema.
+
+**Query:**
+```sql
+CREATE DATABASE company_db;
+USE company_db;
+CREATE TABLE employees (...);
+```
+
+### Q2: Insert Employee Data
+Inserted 5 employee records with complete information.
+
+**Query:**
+```sql
+INSERT INTO employees VALUES
+(101, 'Amit', 'Sharma', 'HR', 50000, '2020-01-15'),
+...
+```
+
+### Q3: Display Employees Sorted by Salary (Low to High)
+**Query:**
+```sql
+SELECT * FROM employees
+ORDER BY salary ASC;
+```
+
+**Result:** Shows employees from lowest salary (50000) to highest (90000)
+
+### Q4: Sort by Department (A-Z) then Salary (High to Low)
+**Query:**
+```sql
+SELECT * FROM employees
+ORDER BY department ASC, salary DESC;
+```
+
+**Result:** Groups by department alphabetically, within each department shows highest salary first
+
+### Q5: IT Department Employees (Newest First)
+**Query:**
+```sql
+SELECT * FROM employees
+WHERE department = 'IT'
+ORDER BY hire_date DESC;
+```
+
+**Result:** Shows Neha Verma (2021) before Raj Mehta (2018)
+
+### Q6: Create and Populate Sales Table
+Created sales table and inserted 5 sales records.
+
+**Query:**
+```sql
+CREATE TABLE sales (...);
+INSERT INTO sales VALUES (...);
+```
+
+### Q7: Sales Records by Amount (High to Low)
+**Query:**
+```sql
+SELECT * FROM sales
+ORDER BY amount DESC;
+```
+
+**Result:** Shows Rohan's ₹4500 sale first, Aditi's ₹1500 sale last
+
+### Q8: All Sales by Customer "Aditi"
+**Query:**
+```sql
+SELECT * FROM sales
+WHERE customer_name = 'Aditi';
+```
+
+**Result:** Shows 2 sales - ₹1500 and ₹3500
+
+### Q9: Primary Key vs Foreign Key
+
+**Primary Key:**
+- Uniquely identifies each record
+- Cannot be NULL
+- One per table
+- Example: employee_id
+
+**Foreign Key:**
+- Links two tables
+- References another table's primary key
+- Can be NULL (unless specified)
+- Multiple per table
+- Maintains referential integrity
+
+### Q10: SQL Constraints
+
+**Definition:** Rules applied to columns to ensure data integrity
+
+**Types:**
+1. **PRIMARY KEY** - Unique identifier
+2. **FOREIGN KEY** - Links tables
+3. **NOT NULL** - Prevents null values
+4. **UNIQUE** - Ensures distinct values
+5. **CHECK** - Validates conditions
+6. **DEFAULT** - Sets default values
+
+**Why Use?**
+- Ensures data accuracy
+- Prevents invalid data
+- Maintains relationships
+- Enforces business rules
+
+## 🛠️ How to Run
+
+1. Open MySQL Workbench
+2. Connect to local MySQL server
+3. Open `sql_basics_assignment.sql`
+4. Execute entire script (Ctrl + Shift + Enter)
+5. Verify results in output panels
+
+## 📌 Key SQL Concepts Demonstrated
+
+✅ Database creation (CREATE DATABASE)
+✅ Table creation (CREATE TABLE)
+✅ Data insertion (INSERT INTO)
+✅ Data retrieval (SELECT)
+✅ Filtering (WHERE)
+✅ Sorting (ORDER BY)
+✅ Primary Keys
+✅ Constraints
+✅ Comments and documentation
+
+## 📈 Results Summary
+
+- **Total Employees:** 5
+- **Departments:** HR, Sales, IT, Finance
+- **Salary Range:** ₹50,000 - ₹90,000
+- **Total Sales:** 5 transactions
+- **Total Sales Amount:** ₹14,400
+
+## 🎓 Key Takeaways
+
+1. Proper database design is crucial
+2. Constraints ensure data quality
+3. Sorting can be multi-level
+4. WHERE clause filters specific data
+5. Comments make SQL code readable
+
+---
+
+**Assignment Status:** ✅ Completed Successfully
+
+**All queries tested and verified in MySQL Workbench**
+```
+
+**Save karo:**
+- File → Save As
+- Naam: `README.md`
+- Type: All Files (*)
+- Save in: `SQL_Basics_Assignment` folder
+
+---
+
+## **PART 5: Final Folder Structure**
+```
+SQL_Basics_Assignment/
+│
+├── sql_basics_assignment.sql       (Main SQL file with all queries)
+└── README.md                       (Documentation)
+```
+
+---
+
